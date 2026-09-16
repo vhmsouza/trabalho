@@ -1,0 +1,32 @@
+<div class="favoritos">
+    <h1>Meus Favoritos</h1>
+
+    @if (favoritos.length === 0) {
+        <div class="mensagem">
+            <span>♡</span>
+            <h2>Nenhum favorito ainda</h2>
+            <p>você ainda não adicionou nenhum produto nos favoritos</p>
+        </div>
+
+    } @else {
+        <div class="favoritos-header">
+            <span>{{ favoritos.length }} item(ns)</span>
+            <button class="btn-limpar" (click)="limparFavoritos()">
+                Limpar favoritos
+            </button>
+        </div>
+
+        <div class="lista-favoritos">
+            @for (produto of favoritos; track produto.id) {
+                <div class="produto-favorito">
+                    <img [src]="produto.imagem" [alt]="produto.nome">
+                    <div class="produto-info">
+                        <h3>{{ produto.nome }}</h3>
+                        <p>{{ produto.descricao }}</p>
+                        <strong>R$ {{ produto.precoAtual.toFixed(2) }}</strong>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

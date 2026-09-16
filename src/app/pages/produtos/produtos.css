@@ -1,0 +1,39 @@
+.produtos-container {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+  padding: 40px 25px;
+
+  display: grid;
+
+  /* 4 cards por fileira */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  /* espaço entre os cards */
+  gap: 30px;
+
+  box-sizing: border-box;
+}
+
+
+/* TABLET */
+@media (max-width: 1000px) {
+
+  .produtos-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+  }
+
+}
+
+
+/* CELULAR */
+@media (max-width: 600px) {
+
+  .produtos-container {
+    grid-template-columns: 1fr;
+    padding: 25px 15px;
+  }
+
+}

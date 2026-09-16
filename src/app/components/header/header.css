@@ -1,0 +1,99 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 250px;
+  height: 100vh;
+
+  padding: 30px 20px;
+
+  box-sizing: border-box;
+
+  background: #fff5f7;
+
+  box-shadow: 3px 0 15px rgba(0, 0, 0, 0.08);
+
+  z-index: 1000;
+}
+
+/* LOGO */
+
+.logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+/* MENU */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* LINKS */
+
+.menu a {
+  text-decoration: none;
+
+  color: #4a3038;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  padding: 14px 18px;
+
+  border-radius: 12px;
+
+  transition: 0.2s;
+}
+
+.menu a:hover {
+  background: #f4c1ca;
+}
+
+/* CELULAR */
+
+@media (max-width: 700px) {
+
+  .header {
+    width: 210px;
+    padding: 25px 15px;
+  }
+
+  .logo img {
+    width: 125px;
+  }
+
+  .menu a {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  /*aba de sair*/
+  .usuario-logado{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn-sair{
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .btn-sair:hover{
+    background-color: #c0392b;
+  }
+
+}

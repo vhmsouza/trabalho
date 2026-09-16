@@ -1,0 +1,229 @@
+/* ========================= 
+   FOOTER 
+========================= */ 
+ 
+.footer { 
+  margin-left: 250px; 
+  padding: 70px 8% 30px; 
+ 
+  /* ROSA DO FUNDO */ 
+  background: #f4c1ca; 
+ 
+  /* TEXTO ESCURO */ 
+  color: #4a3038; 
+
+  /* BORDAS ARREDONDADAS */
+  border-radius: 30px 30px 0 0;
+ 
+  box-sizing: border-box; 
+} 
+ 
+ 
+/* ========================= 
+   CONTEÚDO 
+========================= */ 
+ 
+.footer-conteudo { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+ 
+  display: grid; 
+  grid-template-columns: 1.5fr 1fr 1fr; 
+ 
+  gap: 80px; 
+} 
+ 
+ 
+/* ========================= 
+   MARCA 
+========================= */ 
+ 
+.footer-marca h2 { 
+  margin: 0 0 15px; 
+ 
+  font-family: Georgia, "Times New Roman", serif; 
+  font-size: 32px; 
+  font-weight: 500; 
+ 
+  color: #3f2931; 
+} 
+ 
+.footer-marca p { 
+  max-width: 350px; 
+ 
+  margin: 0; 
+ 
+  font-size: 14px; 
+  line-height: 1.7; 
+ 
+  color: #5f444c; 
+} 
+ 
+ 
+/* ========================= 
+   TÍTULOS 
+========================= */ 
+ 
+.footer-coluna h3 { 
+  margin: 0 0 20px; 
+ 
+  font-size: 14px; 
+  font-weight: 700; 
+ 
+  letter-spacing: 2px; 
+  text-transform: uppercase; 
+ 
+  color: #3f2931; 
+} 
+ 
+ 
+/* ========================= 
+   LINKS 
+========================= */ 
+ 
+.footer-coluna a { 
+  display: block; 
+ 
+  width: fit-content; 
+ 
+  margin: 0 0 12px; 
+ 
+  color: #4a3038 !important; 
+ 
+  text-decoration: none !important; 
+ 
+  font-size: 14px; 
+  line-height: 1.5; 
+ 
+  transition: 0.3s ease; 
+} 
+ 
+.footer-coluna a:hover { 
+  color: #8f5267 !important; 
+ 
+  transform: translateX(4px); 
+} 
+ 
+ 
+/* ========================= 
+   EFEITO DOS LINKS 
+========================= */ 
+ 
+.footer-coluna a::after { 
+  content: ""; 
+ 
+  display: block; 
+ 
+  width: 0; 
+  height: 1px; 
+ 
+  margin-top: 3px; 
+ 
+  background: #8f5267; 
+ 
+  transition: width 0.3s ease; 
+} 
+ 
+.footer-coluna a:hover::after { 
+  width: 100%; 
+} 
+ 
+ 
+/* ========================= 
+   LINHA 
+========================= */ 
+ 
+.footer-linha { 
+  max-width: 1200px; 
+ 
+  margin: 50px auto 25px; 
+ 
+  border: 0; 
+ 
+  border-top: 1px solid rgba(74, 48, 56, 0.25); 
+} 
+ 
+ 
+/* ========================= 
+   PARTE INFERIOR 
+========================= */ 
+ 
+.footer-bottom { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+ 
+  display: flex; 
+ 
+  justify-content: space-between; 
+  align-items: center; 
+ 
+  gap: 20px; 
+} 
+ 
+.footer-bottom p { 
+  margin: 0; 
+ 
+  font-size: 12px; 
+ 
+  color: #765d65; 
+} 
+ 
+.footer-assinatura { 
+  font-family: Georgia, "Times New Roman", serif; 
+ 
+  font-size: 14px; 
+ 
+  color: #8f5267; 
+} 
+ 
+ 
+/* ========================= 
+   TABLET 
+========================= */ 
+ 
+@media (max-width: 900px) { 
+ 
+  .footer { 
+    margin-left: 210px; 
+  } 
+ 
+  .footer-conteudo { 
+    grid-template-columns: 1fr 1fr; 
+ 
+    gap: 40px; 
+  } 
+ 
+  .footer-marca { 
+    grid-column: 1 / -1; 
+  } 
+} 
+ 
+ 
+/* ========================= 
+   CELULAR 
+========================= */ 
+ 
+@media (max-width: 650px) { 
+ 
+  .footer { 
+    margin-left: 0; 
+ 
+    padding: 50px 6% 25px; 
+  } 
+ 
+  .footer-conteudo { 
+    grid-template-columns: 1fr; 
+ 
+    gap: 35px; 
+  } 
+ 
+  .footer-marca { 
+    grid-column: auto; 
+  } 
+ 
+  .footer-bottom { 
+    flex-direction: column; 
+ 
+    align-items: flex-start; 
+  } 
+}

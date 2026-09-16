@@ -1,0 +1,521 @@
+/* ========================= 
+   HOME 
+========================= */ 
+ 
+.home { 
+  margin-left: 250px; 
+  min-height: 100vh; 
+  background: #fffafb; 
+  color: #4a3038; 
+} 
+ 
+ 
+/* ========================= 
+   HERO 
+========================= */ 
+ 
+.hero { 
+  min-height: 620px; 
+ 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+ 
+  padding: 80px 8%; 
+ 
+  box-sizing: border-box; 
+ 
+  background: 
+    radial-gradient( 
+      circle at 80% 45%, 
+      #f8dce3 0, 
+      #fcecef 25%, 
+      #fffafb 60% 
+    ); 
+ 
+  overflow: hidden; 
+} 
+ 
+.hero-text { 
+  max-width: 620px; 
+} 
+ 
+.subtitulo { 
+  margin: 0 0 18px; 
+ 
+  font-size: 13px; 
+  letter-spacing: 4px; 
+  font-weight: 600; 
+ 
+  color: #b56b82; 
+} 
+ 
+.hero h1 { 
+  margin: 0; 
+ 
+  font-family: Georgia, "Times New Roman", serif; 
+ 
+  font-size: clamp(48px, 5vw, 78px); 
+  line-height: 1.05; 
+  font-weight: 500; 
+ 
+  color: #3f2931; 
+} 
+ 
+.descricao { 
+  max-width: 500px; 
+ 
+  margin: 28px 0 35px; 
+ 
+  font-size: 17px; 
+  line-height: 1.7; 
+ 
+  color: #765d65; 
+} 
+ 
+.btn-produtos { 
+  display: inline-block; 
+ 
+  padding: 15px 30px; 
+ 
+  border-radius: 30px; 
+ 
+  background: #d998aa; 
+  color: white; 
+ 
+  text-decoration: none; 
+ 
+  font-size: 15px; 
+  font-weight: 600; 
+ 
+  box-shadow: 0 8px 20px rgba(180, 105, 130, 0.2); 
+ 
+  transition: 0.3s; 
+} 
+ 
+.btn-produtos:hover { 
+  transform: translateY(-3px); 
+ 
+  background: #c98297; 
+ 
+  box-shadow: 0 12px 25px rgba(180, 105, 130, 0.3); 
+} 
+ 
+ 
+/* detalhe decorativo */ 
+ 
+.hero-detalhe { 
+  width: 330px; 
+  height: 330px; 
+ 
+  border-radius: 50%; 
+ 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+ 
+  gap: 8px; 
+ 
+  background: rgba(255, 255, 255, 0.65); 
+ 
+  border: 1px solid rgba(190, 130, 150, 0.2); 
+ 
+  box-shadow: 
+    0 25px 60px rgba(150, 90, 110, 0.12), 
+    inset 0 0 40px rgba(255, 255, 255, 0.8); 
+ 
+  transform: rotate(-8deg); 
+} 
+ 
+.hero-detalhe span { 
+  font-family: Georgia, "Times New Roman", serif; 
+ 
+  font-size: 25px; 
+  letter-spacing: 6px; 
+ 
+  color: #b56b82; 
+} 
+ 
+ 
+/* ========================= 
+   DESTAQUES 
+========================= */ 
+ 
+.destaques { 
+  padding: 90px 8%; 
+} 
+ 
+.titulo-secao { 
+  text-align: center; 
+  margin-bottom: 50px; 
+} 
+ 
+.titulo-secao p { 
+  margin: 0 0 10px; 
+ 
+  font-size: 12px; 
+  letter-spacing: 3px; 
+ 
+  color: #b56b82; 
+} 
+ 
+.titulo-secao h2 { 
+  margin: 0; 
+ 
+  font-family: Georgia, "Times New Roman", serif; 
+ 
+  font-size: 42px; 
+  font-weight: 500; 
+ 
+  color: #3f2931; 
+} 
+ 
+ 
+/* ========================= 
+   CARDS DOS PRODUTOS
+========================= */ 
+ 
+.cards { 
+  display: grid; 
+ 
+  grid-template-columns: repeat(3, 1fr); 
+ 
+  gap: 28px; 
+ 
+  max-width: 1100px; 
+ 
+  margin: 0 auto;
+
+  position: relative;
+} 
+ 
+.card { 
+  position: relative;
+
+  padding: 18px; 
+ 
+  background: white; 
+ 
+  border: 1px solid #f3dce3; 
+ 
+  border-radius: 22px; 
+ 
+  box-shadow: 0 10px 30px rgba(100, 50, 70, 0.06); 
+ 
+  transition: 0.35s ease;
+
+  overflow: hidden;
+
+  z-index: 1;
+}
+
+
+/* =========================
+   EFEITO AO PASSAR O MOUSE
+========================= */
+
+/* Quando o mouse entra na área dos produtos,
+   os outros cards ficam levemente escuros */
+
+.cards:hover .card {
+  opacity: 0.65;
+
+  filter: brightness(0.88);
+
+  transition: 0.35s ease;
+}
+
+
+/* O produto selecionado continua claro
+   e fica em destaque */
+
+.cards .card:hover {
+  opacity: 1;
+
+  filter: brightness(1);
+
+  transform: scale(1.03);
+
+  border-color: #e8b4c2;
+
+  box-shadow:
+    0 20px 45px rgba(180, 105, 130, 0.25);
+
+  z-index: 5;
+}
+
+
+/* Camada rosa suave no produto */
+
+.card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(244, 193, 202, 0.18);
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease;
+
+  pointer-events: none;
+
+  border-radius: 22px;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+
+/* =========================
+   IMAGEM
+========================= */
+
+.card-imagem { 
+  height: 270px; 
+ 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+ 
+  border-radius: 17px; 
+ 
+  background: #fff3f6; 
+ 
+  overflow: hidden; 
+} 
+ 
+.card-imagem img { 
+  width: 100%; 
+  height: 100%; 
+ 
+  object-fit: contain; 
+ 
+  transition: 0.4s ease; 
+} 
+ 
+.card:hover .card-imagem img { 
+  transform: scale(1.06); 
+} 
+ 
+.card h3 { 
+  margin: 20px 5px 7px; 
+ 
+  font-family: Georgia, "Times New Roman", serif; 
+ 
+  font-size: 22px; 
+  font-weight: 500; 
+ 
+  color: #4a3038; 
+} 
+ 
+.card p { 
+  margin: 0 5px 8px; 
+ 
+  font-size: 14px; 
+ 
+  color: #8a7078; 
+} 
+ 
+ 
+/* ========================= 
+   SOBRE 
+========================= */ 
+ 
+.sobre { 
+  margin: 20px 8% 90px; 
+ 
+  padding: 70px; 
+ 
+  display: grid; 
+ 
+  grid-template-columns: 1fr 1fr; 
+ 
+  gap: 80px; 
+ 
+  align-items: center; 
+ 
+  background: #fdf0f4; 
+ 
+  border-radius: 30px; 
+ 
+  box-sizing: border-box; 
+} 
+ 
+.sobre h2 { 
+  margin: 0; 
+ 
+  font-family: Georgia, "Times New Roman", serif; 
+ 
+  font-size: 46px; 
+  line-height: 1.15; 
+ 
+  font-weight: 500; 
+ 
+  color: #3f2931; 
+} 
+ 
+.sobre > p { 
+  margin: 0; 
+ 
+  font-size: 16px; 
+  line-height: 1.8; 
+ 
+  color: #765d65; 
+} 
+ 
+ 
+/* ========================= 
+   SUSTENTABILIDADE 
+========================= */ 
+ 
+.sustentabilidade { 
+  margin: 0 8% 90px; 
+ 
+  padding: 70px; 
+ 
+  display: flex; 
+ 
+  justify-content: space-between; 
+ 
+  align-items: center; 
+ 
+  gap: 50px; 
+ 
+  border: 1px solid #f0d5dd; 
+ 
+  border-radius: 30px; 
+ 
+  background: white; 
+ 
+  box-sizing: border-box; 
+} 
+ 
+.sustentabilidade-texto { 
+  max-width: 700px; 
+} 
+ 
+.sustentabilidade h2 { 
+  margin: 0 0 20px; 
+ 
+  font-family: Georgia, "Times New Roman", serif; 
+ 
+  font-size: 42px; 
+  line-height: 1.2; 
+ 
+  font-weight: 500; 
+ 
+  color: #3f2931; 
+} 
+ 
+.sustentabilidade-texto > p:last-child { 
+  margin: 0; 
+ 
+  font-size: 16px; 
+  line-height: 1.8; 
+ 
+  color: #765d65; 
+} 
+ 
+.sustentabilidade-detalhe { 
+  width: 130px; 
+  height: 130px; 
+ 
+  flex-shrink: 0; 
+ 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+ 
+  border-radius: 50%; 
+ 
+  background: #f7dce4; 
+ 
+  font-size: 55px; 
+ 
+  color: #b56b82; 
+} 
+ 
+ 
+/* ========================= 
+   CELULAR 
+========================= */ 
+ 
+@media (max-width: 900px) { 
+ 
+  .home { 
+    margin-left: 210px; 
+  } 
+ 
+  .hero { 
+    padding: 60px 6%; 
+  } 
+ 
+  .hero-detalhe { 
+    width: 240px; 
+    height: 240px; 
+  } 
+ 
+  .hero-detalhe span { 
+    font-size: 18px; 
+  } 
+ 
+  .cards { 
+    grid-template-columns: 1fr; 
+  } 
+ 
+  .sobre { 
+    grid-template-columns: 1fr; 
+    gap: 30px; 
+    padding: 45px; 
+  } 
+ 
+  .sustentabilidade { 
+    padding: 45px; 
+  } 
+ 
+} 
+ 
+ 
+@media (max-width: 650px) { 
+ 
+  .hero { 
+    flex-direction: column; 
+ 
+    align-items: flex-start; 
+ 
+    gap: 50px; 
+  } 
+ 
+  .hero h1 { 
+    font-size: 45px; 
+  } 
+ 
+  .hero-detalhe { 
+    align-self: center; 
+  } 
+ 
+  .destaques { 
+    padding: 60px 6%; 
+  } 
+ 
+  .titulo-secao h2 { 
+    font-size: 34px; 
+  } 
+ 
+  .sobre, 
+  .sustentabilidade { 
+    margin-left: 5%; 
+    margin-right: 5%; 
+  } 
+ 
+  .sobre h2, 
+  .sustentabilidade h2 { 
+    font-size: 34px; 
+  } 
+ 
+}

@@ -1,0 +1,83 @@
+<div class="carrinho-container">
+
+  <h1>Meu Carrinho</h1>
+
+  <!-- CARRINHO VAZIO -->
+  <div *ngIf="produtos.length === 0" class="carrinho-vazio">
+    <h2>Seu carrinho está vazio 🛍️</h2>
+    <p>Adicione produtos para começar suas compras.</p>
+  </div>
+
+  <!-- PRODUTOS DO CARRINHO -->
+  <div *ngIf="produtos.length > 0" class="carrinho-lista">
+
+    <div
+      class="produto-carrinho"
+      *ngFor="let produto of produtos"
+    >
+
+      <img
+        [src]="produto.imagem"
+        [alt]="produto.nome"
+      >
+
+      <div class="produto-info">
+
+        <h3>{{ produto.nome }}</h3>
+
+        <p class="preco">
+          R$ {{ produto.preco.toFixed(2) }}
+        </p>
+
+        <div class="quantidade">
+
+          <button
+            type="button"
+            (click)="diminuirQuantidade(produto.id)"
+          >
+            −
+          </button>
+
+          <span>{{ produto.quantidade }}</span>
+
+          <button
+            type="button"
+            (click)="aumentarQuantidade(produto.id)"
+          >
+            +
+          </button>
+
+        </div>
+
+        <button
+          type="button"
+          class="btn-remover"
+          (click)="removerProduto(produto.id)"
+        >
+          Remover
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- TOTAL -->
+    <div class="carrinho-total">
+
+      <h2>
+        Total: R$ {{ total.toFixed(2) }}
+      </h2>
+
+      <button
+        type="button"
+        class="btn-limpar"
+        (click)="limparCarrinho()"
+      >
+        Limpar carrinho
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

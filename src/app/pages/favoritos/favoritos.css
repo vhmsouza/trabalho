@@ -1,0 +1,67 @@
+/* Container geral da página */
+.favoritos {
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.favoritos h1 {
+  font-size: 1.8rem;
+  color: #4a2c33;
+  margin-bottom: 24px;
+}
+
+/* Grid de produtos favoritos */
+.lista-favoritos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+/* Card de cada produto */
+.produto-favorito {
+  background: #ffffff;
+  border: 1px solid #f5d5dd;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.produto-favorito:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagem do produto */
+.produto-favorito img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #fbe4ea; /* aparece rosinha se a imagem não carregar */
+  margin-bottom: 12px;
+}
+
+/* Informações do produto */
+.produto-info h3 {
+  font-size: 1rem;
+  color: #4a2c33;
+  margin: 4px 0;
+}
+
+.produto-info p {
+  font-size: 0.85rem;
+  color: #8a6b72;
+  margin-bottom: 8px;
+}
+
+.produto-info strong {
+  color: #d46a86;
+  font-size: 1.1rem;
+}
+
+/* Mensagem de "sem favoritos" */
+.mensagem {
+  text-align: center;
+  padding: 60px 20p;}
